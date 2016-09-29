@@ -6,17 +6,9 @@
 
 void Main()
 {
-	string assessmentXml = "<Wizard><Title>Mathematics</Title><Description>This assessment will have 2 questions. Each question carries 10 marks. You need to answer atleast 1 question correctly inorder to pass this assessment. Note: You cannot retake this assessment. This is your first &amp; last attempt. </Description><MaximumRetakeLimit>0</MaximumRetakeLimit><Feedback><FeedbackMethod>custom</FeedbackMethod><FeedbackMessage>Thank you for submitting the assessment</FeedbackMessage><Grades><Grade><Name>Fail</Name><IsDefault>true</IsDefault><Message>Sorry, You've failed the test</Message></Grade><Grade><Name>Pass</Name><IsDefault>false</IsDefault><Message>Well done.  You've passed the test</Message><Score>10</Score></Grade></Grades></Feedback><StagingMethod>one-by-one</StagingMethod><Scoring ScoringMethod=\"divide\" /><Page><Section><Question ID=\"1\" Required=\"true\" RandomizeChoices=\"true\" ScoringAt=\"question\" Score=\"10\" ChoiceType=\"checkbox\"><Title>Select all the choices which you feel could be correct. 4 + 4 = _____ ? </Title><Choice ID=\"1\" Correct=\"true\" Score=\"0\"><Title>8</Title><Value>8</Value></Choice><Choice ID=\"2\" Correct=\"true\" Score=\"0\"><Title>08</Title><Value>08</Value></Choice><Choice ID=\"3\" Correct=\"false\" Score=\"0\"><Title>16</Title><Value>16</Value></Choice><Choice ID=\"4\" Correct=\"false\" Score=\"0\"><Title>1</Title><Value>1</Value></Choice></Question><Question ID=\"2\" Required=\"true\" RandomizeChoices=\"true\" ScoringAt=\"question\" Score=\"10\" ChoiceType=\"radiobutton\"><Title>8 * 8 = _____ ?</Title><Choice ID=\"1\" Correct=\"true\" Score=\"0\"><Title>84</Title><Value>84</Value></Choice><Choice ID=\"2\" Correct=\"false\" Score=\"0\"><Title>54</Title><Value>54</Value></Choice><Choice ID=\"3\" Correct=\"false\" Score=\"0\"><Title>16</Title><Value>16</Value></Choice></Question></Section></Page></Wizard>";
+	//XElement element = XElement.Load(@"C:\github\linqpad\assessment_builder\datasource\assessment.xml");
 	
-	string factualQuestionXml = "<Question ID=\"2\" Required=\"true\" RandomizeChoices=\"true\" ScoringAt=\"question\" Score=\"10\" ChoiceType=\"singleline\"><Title>8 * 8 = _____ ?</Title><Choice ID=\"1\" Correct=\"true\"><FieldFormat>Email</FieldFormat><MaximumLength>2000</MaximumLength></Choice></Question>";
-	
-	
-	XElement element = XElement.Parse(assessmentXml);
-	
-	//XElement question = element.Descendants("Question").Select(x => x).FirstOrDefault();
-	
-	XElement question = XElement.Parse(factualQuestionXml);
-	
+	XElement question = XElement.Load(@"C:\github\linqpad\assessment_builder\datasource\factualquestion.xml");
 	
 	XElement targetQuestion = new XElement("question");
 	

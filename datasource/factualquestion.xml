@@ -1,0 +1,7 @@
+<Question ID="2" Required="true" RandomizeChoices="true" ScoringAt="question" Score="10" ChoiceType="singleline">
+  <Title>8 * 8 = _____ ?</Title>
+  <Choice ID="1" Correct="true">
+    <FieldFormat>Email</FieldFormat>
+    <MaximumLength>2000</MaximumLength>
+  </Choice>
+</Question>
